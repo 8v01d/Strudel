@@ -1,0 +1,32 @@
+$drumNnoise: sound("bd*4<white>*8")
+.decay(.04).sustain(0)
+.gain(3)
+
+$notespauses: note("c, eb, g")
+.struct("x ~ x ~ ~ x ~ x ~ ~ ~ x ~ x ~ ~")
+.slow(2)
+.room(.6)
+.size(.8)
+
+$piano: "<0 [2 4]>"
+.echoWith(4, 1/8, (p,n) => p.add(n*2))
+.scale("C:ritusen").note()
+.s("piano")
+.room(.6)
+.size(.8)
+.shape(0.5)
+
+$square: n(rand.range(0,12).segment(8)) // 2 4 8
+.scale("C:ritusen")
+.s("square")
+.room(.6)
+.size(.8)
+// .jux(rev)
+// .struct("x ~ x*6 ~")
+// .struct("x*2 ~ x*6!2 ~")
+// .struct("x*4!6 ~ x ~ ~ x*2")
+// .struct("x*6!2 ~ x*2!2 ~ ~ x*2!4")
+// .fast(2)
+.legato(2)
+.shape(0.5)
+.octave(4)
